@@ -1,4 +1,4 @@
-# Project #: Project Name
+# Project #: Project 1 (Deterministic Finite Automata)
 
 * Author: Reggie Wade, Vlad Maliutin
 * Class: CS361
@@ -28,13 +28,6 @@ and ran some of the tests as we got certain things working to verify our impleme
 We don't really know what we would have changed about the design process because it
 didn't take too long and was pretty straightforward.
 
-Write a brief (2-3 paragraph) reflection describing your experience with this 
-project. Answer the following questions (but feel free to add other insights): 
-- What worked well and what was a struggle?
-- What concepts still aren't quite clear?
-- What techniques did you use to make your code easy to debug and modify?
-- What would you change about your design process?
-- If you could go back in time, what would you tell yourself about doing this project?
 
 ## Compiling and Using
 
