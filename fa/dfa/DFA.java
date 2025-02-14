@@ -7,7 +7,7 @@ import java.util.*;
  * DFA class implements DFAInterface and represents a deterministic finite automaton.
  * It uses Java collections to manage states, transitions, and the alphabet.
  * 
- * @author 
+ * @author Reggie Wade, Vlad Maliutin
  */
 public class DFA implements DFAInterface {
     private Set<Character> sigma; // Alphabet
@@ -124,22 +124,27 @@ public class DFA implements DFAInterface {
 
     @Override
     public DFA swap(char symb1, char symb2) {
+        // create new DFA to swap
         DFA swappedDFA = new DFA();
         swappedDFA.sigma.addAll(sigma);
         for (String stateName : states.keySet()) {
             swappedDFA.addState(stateName);
         }
+        // for each state, check all outgoing transitions
         for (String stateName : states.keySet()) {
             DFAState original = states.get(stateName);
             for (char sym : sigma) {
+                // swap symbol if equal to either symb1 or symb2
                 char swappedSym = (sym == symb1) ? symb2 : (sym == symb2) ? symb1 : sym;
                 DFAState next = original.getNextState(sym);
+                // if next state not null, add the transition
                 if (next != null) {
                     swappedDFA.addTransition(stateName, next.getName(), swappedSym);
                 }
             }
         }
-        if (startState != null) {
+        // assign start and end states
+        if (this.startState != null) {
             swappedDFA.setStart(startState.getName());
         }
         for (DFAState finalState : finalStates) {

@@ -40,6 +40,8 @@ public interface DFAInterface extends FAInterface{
 	 * which transitions labels are
 	 * swapped between symbols symb1
 	 * and symb2.
+	 * @param symb1 label to swap with symb2
+	 * @param symb2 label to swap with symb1
 	 * @return a copy of this DFA
 	 */
 	public DFA swap(char symb1, char symb2);
